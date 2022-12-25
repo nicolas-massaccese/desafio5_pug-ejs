@@ -1,0 +1,32 @@
+<div class="jumbotron">
+    <h1>Vista Productos</h1>
+    <br>
+    {{#if products}}
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">name</th>
+                    <th scope="col">price</th>
+                    <th scope="col">photo</th>
+                </tr>
+            </thead>
+            <tbody>
+            {{#each products}}
+                <tr>
+                    <th scope="row"> {{ id }} </th>
+                    <td> {{ this.name }} </td>
+                    <td> {{ this.price }} </td>
+                    <td> {{ this.photo }} </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    {{else}}
+        <p style="color:red">NO SE ENCONTRARON PRODUCTOS</p>
+    {{/if}}
+    <br>
+    <a href="/" type="button" class="btn btn-primary">Ingresar Productos</a>
+</div>

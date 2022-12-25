@@ -1,0 +1,26 @@
+extends header.pug  
+block table 
+    div(class="jumbotron")
+        h1 Vista Productos
+        <br>
+        if products.length === 0
+            p(style="color:red") NO SE ENCONTRARON PRODUCTOS
+        else
+            div(class="container")
+                table(class="table")
+                    thead
+                        tr
+                            th(scope="col") #
+                            th(scope="col") name
+                            th(scope="col") price
+                            th(scope="col") photo
+                    tbody
+                    each product in products
+                        tr
+                            th(scope="row")=product.id 
+                            td=product.name 
+                            td=product.price 
+                            td=product.photo             
+        br
+        a(href="/" type="button" class="btn btn-primary") Ingresar Productos
+    
